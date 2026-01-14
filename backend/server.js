@@ -98,6 +98,24 @@ if (process.env.NODE_ENV === 'development') {
     });
 }
 
+
+//! Root Route (Important for health checks before API is ready. Always add before 404 handler seen after this code bloc)
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'Health Balance Hub API is running!',
+        timestamp: new Date().toISOString(),
+        version: '1.0.0',
+        routes: {
+            healthCheck: '/api/health',
+            apiDocs: '/api'
+        }
+    });
+});
+
+
+
+
 //* Handle unmatched routes (404)
 app.all('*', (req, res, next) => {
    const error = new Error(`Route ${req.originalUrl} not found`);
