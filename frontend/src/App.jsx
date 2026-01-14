@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import HealthCheck from "./components/HealthCheck";
 import Blogs from "./pages/Blogs";
 import Navbar from "./components/Navbar";
 import BlogDetail from "./pages/BlogDetail";
@@ -32,6 +33,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/health-check" element={<HealthCheck />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/navbar" element={<Navbar />} />
               <Route path="/blogs/:id" element={<BlogDetail />} />
@@ -42,7 +44,7 @@ function App() {
               <Route path="/membership" element={<Membership />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/search" element={<Search />} />
+               <Route path="/search" element={<Search />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />    
               <Route path="/verify-email" element={<VerifyEmailPage />} /> {/* updated by Okile */}

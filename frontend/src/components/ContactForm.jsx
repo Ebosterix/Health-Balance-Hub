@@ -27,7 +27,7 @@ export default function ContactForm() {
     
     try {
       //* FIXED: Call our backend contact API
-      const response = await axios.post("http://localhost:5001/api/contact", form);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || "http://localhost:5001/api"}/contact`, form);
 
       //* Handle backend success response
       if (response.data.success) {
